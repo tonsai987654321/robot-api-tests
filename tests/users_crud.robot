@@ -17,6 +17,10 @@ GET Single User Returns Correct ID
     ${data}=        Get From Dictionary    ${response.json()}    data
     Should Be Equal As Integers    ${data}[id]    ${VALID_USER_ID}
 
+GET Non-Existent User Returns 404
+    ${response}=    Get User    ${INVALID_USER_ID}
+    Should Be Equal As Integers    ${response.status_code}    404
+
 POST Create User Returns 201 With Data
     ${response}=    Create User    John Doe    QA Engineer
     ${body}=        Set Variable    ${response.json()}
