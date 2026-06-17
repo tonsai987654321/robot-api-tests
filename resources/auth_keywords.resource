@@ -2,12 +2,13 @@
 Resource    api_keywords.resource
 
 *** Keywords ***
-Register User
-    [Arguments]    &{body}
-    ${response}=    POST On Session    reqres    /register    json=&{body}    expected_status=any
-    RETURN    ${response}
-
 Login User
     [Arguments]    &{body}
-    ${response}=    POST On Session    reqres    /login    json=&{body}    expected_status=any
+    ${response}=    POST On Session    reqres    /auth/login    json=&{body}    expected_status=any
+    RETURN    ${response}
+
+Get Authenticated User
+    [Arguments]    ${token}
+    &{headers}=    Create Dictionary    Authorization=Bearer ${token}
+    ${response}=    GET On Session    reqres    /auth/me    headers=&{headers}    expected_status=any
     RETURN    ${response}

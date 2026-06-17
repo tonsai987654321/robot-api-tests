@@ -1,8 +1,7 @@
 *** Variables ***
-${BASE_URL}           https://reqres.in/api
+${BASE_URL}           https://dummyjson.com
 ${TIMEOUT}            10
-${VALID_USER_ID}      2
+${VALID_USER_ID}      1
 ${INVALID_USER_ID}    9999
-${TEST_EMAIL}         %{TEST_EMAIL}
+${TEST_USERNAME}      %{TEST_USERNAME}
 ${TEST_PASSWORD}      %{TEST_PASSWORD}
-${LOGIN_PASSWORD}     %{LOGIN_PASSWORD}
