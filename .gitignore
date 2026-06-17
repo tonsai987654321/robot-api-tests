@@ -8,6 +8,9 @@ env/
 # Robot Framework outputs
 results/
 
+# Secrets
+.env
+
 # OS / editor
 .DS_Store
 .idea/

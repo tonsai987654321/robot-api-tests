@@ -25,6 +25,10 @@ jobs:
       - name: Run tests
         run: robot --outputdir results tests/
         continue-on-error: true
+        env:
+          TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+          LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
 
       - name: Prepare report for GitHub Pages
         run: cp results/report.html results/index.html
