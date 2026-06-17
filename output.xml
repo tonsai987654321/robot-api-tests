@@ -1,884 +1,884 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.13 on linux)" generated="2026-06-17T11:04:21.745500" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.12.13 on linux)" generated="2026-06-17T11:22:58.396091" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="/home/runner/work/robot-api-tests/robot-api-tests/tests">
 <suite id="s1-s1" name="Auth" source="/home/runner/work/robot-api-tests/robot-api-tests/tests/auth.robot">
 <kw name="Create API Session" owner="api_keywords" type="SETUP">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:21.989263" level="INFO">Creating Session using : alias=reqres, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2026-06-17T11:22:59.148972" level="INFO">Creating Session using : alias=reqres, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
 <arg>reqres</arg>
 <arg>${BASE_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-06-17T11:04:21.989016" elapsed="0.000484"/>
+<status status="PASS" start="2026-06-17T11:22:59.148721" elapsed="0.000505"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:21.988608" elapsed="0.001033"/>
+<status status="PASS" start="2026-06-17T11:22:59.148267" elapsed="0.001087"/>
 </kw>
 <test id="s1-s1-t1" name="POST Login With Valid Credentials Returns Token" line="9">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:21.990382" level="INFO">&amp;{body} = { username= | password=pistol }</msg>
+<msg time="2026-06-17T11:22:59.150231" level="INFO">&amp;{body} = { username=emilys | password= }</msg>
 <var>&amp;{body}</var>
 <arg>username=${TEST_USERNAME}</arg>
 <arg>password=${TEST_PASSWORD}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:21.990024" elapsed="0.000383"/>
+<status status="PASS" start="2026-06-17T11:22:59.149851" elapsed="0.000404"/>
 </kw>
 <kw name="Login User" owner="auth_keywords">
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.114016" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:22:59.410619" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
  path_url=/auth/login 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '38', 'Content-Type': 'application/json'} 
- body=b'{"username": "", "password": "pistol"}' 
+ body=b'{"username": "emilys", "password": ""}' 
  </msg>
-<msg time="2026-06-17T11:04:22.114162" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:22:59.410740" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
  status=400, reason=Bad Request 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '44', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2c-JAq5V8MKfWmWXvKJFTg6rvXRjdU"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=7HT31VtYo2ENWB5ub99EgosysOhOevnv%2BLWt%2FiT9IR17riquzmz1942BYDxJRHg6gzztoAbiss7XoPL7nglXsxBSOql6%2FNFb2F%2Bg3%2FuZl0zaNlqEQq3GRG7XeINEL%2FOf"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b21cb40615-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:22:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '44', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2c-JAq5V8MKfWmWXvKJFTg6rvXRjdU"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781695380', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=SGV%2Fn%2F%2BwYbUPzE72qRmoRdJ%2BsH9wWutGLxDlURcDh9XmVRJagugm%2F8ezw8mZZwT4Bb4ewOIPrmVTYpndJY0fg8TNg1Mmv1y%2Be9zFMs8JkYKOtXualTxgulKmXSzvFtNc"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1adf83b6d1d99-SJC'} 
  body={"message":"Username and password required"} 
  </msg>
-<msg time="2026-06-17T11:04:22.114250" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:22:59.410813" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.114426" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:22:59.410976" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/auth/login</arg>
 <arg>json=&amp;{body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:21.990841" elapsed="0.123624"/>
+<status status="PASS" start="2026-06-17T11:22:59.150725" elapsed="0.260288"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.114553" elapsed="0.000085"/>
+<status status="PASS" start="2026-06-17T11:22:59.411134" elapsed="0.000071"/>
 </return>
-<msg time="2026-06-17T11:04:22.114795" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:22:59.411397" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>&amp;{body}</arg>
-<status status="PASS" start="2026-06-17T11:04:21.990547" elapsed="0.124270"/>
+<status status="PASS" start="2026-06-17T11:22:59.150442" elapsed="0.260980"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.115446" level="INFO">Argument types are:
+<msg time="2026-06-17T11:22:59.412056" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2026-06-17T11:04:22.115588" level="FAIL">400 != 200</msg>
+<msg time="2026-06-17T11:22:59.412168" level="FAIL">400 != 200</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2026-06-17T11:04:22.114959" elapsed="0.000909">400 != 200</status>
+<status status="FAIL" start="2026-06-17T11:22:59.411566" elapsed="0.000912">400 != 200</status>
 </kw>
 <kw name="Dictionary Should Contain Key">
 <arg>${response.json()}</arg>
 <arg>accessToken</arg>
-<status status="NOT RUN" start="2026-06-17T11:04:22.116027" elapsed="0.000021"/>
+<status status="NOT RUN" start="2026-06-17T11:22:59.412643" elapsed="0.000020"/>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:21.989711" elapsed="0.126483">400 != 200</status>
+<status status="FAIL" start="2026-06-17T11:22:59.149474" elapsed="0.263334">400 != 200</status>
 </test>
 <test id="s1-s1-t2" name="POST Login With Invalid Credentials Returns 400" line="15">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.117053" level="INFO">&amp;{body} = { username=wronguser | password=wrongpassword }</msg>
+<msg time="2026-06-17T11:22:59.413825" level="INFO">&amp;{body} = { username=wronguser | password=wrongpassword }</msg>
 <var>&amp;{body}</var>
 <arg>username=wronguser</arg>
 <arg>password=wrongpassword</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.116856" elapsed="0.000220"/>
+<status status="PASS" start="2026-06-17T11:22:59.413579" elapsed="0.000269"/>
 </kw>
 <kw name="Login User" owner="auth_keywords">
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.130100" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:22:59.593119" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
  path_url=/auth/login 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/json'} 
  body=b'{"username": "wronguser", "password": "wrongpassword"}' 
  </msg>
-<msg time="2026-06-17T11:04:22.130178" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:22:59.593218" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
  status=400, reason=Bad Request 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '33', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"21-dBEoW0UmTF+EGUMaprEp9/8zNNA"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '98', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=TwpQD3rvkCBOZ0jEaVSsXCXgwedAO0QViDnuKpIw9xo0DYw1oV4T4%2BehZLWlAiF1VSNAP1K9muxtr3KriWdTsV4z2jEv8HfO7emv3HWQv7md3aCcNfvINkXIqvsKfeWg"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b23cd20615-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:22:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '33', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"21-dBEoW0UmTF+EGUMaprEp9/8zNNA"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '98', 'x-ratelimit-reset': '1781695380', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=uDUyDZsILRoPUjs5lBNmfOJQXncJYMz%2BCKI5zRnkrS3nyTu96xYucH05lCHyoT1QfoH3kwjACxXjpgT401A3K62SPk2iOKG9Fg1iI3cI2Tgs8WqqivrtMDv5cPOhK%2Bmf"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1adf95d2f1d99-SJC'} 
  body={"message":"Invalid credentials"} 
  </msg>
-<msg time="2026-06-17T11:04:22.130242" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:22:59.593292" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.130373" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:22:59.593488" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/auth/login</arg>
 <arg>json=&amp;{body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.117488" elapsed="0.012921"/>
+<status status="PASS" start="2026-06-17T11:22:59.414262" elapsed="0.179261"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.130476" elapsed="0.000046"/>
+<status status="PASS" start="2026-06-17T11:22:59.593634" elapsed="0.000053"/>
 </return>
-<msg time="2026-06-17T11:04:22.130671" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:22:59.593889" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>&amp;{body}</arg>
-<status status="PASS" start="2026-06-17T11:04:22.117217" elapsed="0.013531"/>
+<status status="PASS" start="2026-06-17T11:22:59.413992" elapsed="0.179917"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.131249" level="INFO">Argument types are:
+<msg time="2026-06-17T11:22:59.594510" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>400</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.130855" elapsed="0.000445"/>
+<status status="PASS" start="2026-06-17T11:22:59.594038" elapsed="0.000524"/>
 </kw>
 <kw name="Dictionary Should Contain Key">
-<msg time="2026-06-17T11:04:22.132078" level="FAIL">No keyword with name 'Dictionary Should Contain Key' found.</msg>
+<msg time="2026-06-17T11:22:59.595348" level="FAIL">No keyword with name 'Dictionary Should Contain Key' found.</msg>
 <arg>${response.json()}</arg>
 <arg>message</arg>
-<status status="FAIL" start="2026-06-17T11:04:22.132050" elapsed="0.000060">No keyword with name 'Dictionary Should Contain Key' found.</status>
+<status status="FAIL" start="2026-06-17T11:22:59.595299" elapsed="0.000086">No keyword with name 'Dictionary Should Contain Key' found.</status>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.116441" elapsed="0.015804">No keyword with name 'Dictionary Should Contain Key' found.</status>
+<status status="FAIL" start="2026-06-17T11:22:59.413089" elapsed="0.182444">No keyword with name 'Dictionary Should Contain Key' found.</status>
 </test>
 <test id="s1-s1-t3" name="GET Authenticated User With Valid Token Returns User Data" line="21">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.133114" level="INFO">&amp;{body} = { username= | password=pistol }</msg>
+<msg time="2026-06-17T11:22:59.596385" level="INFO">&amp;{body} = { username=emilys | password= }</msg>
 <var>&amp;{body}</var>
 <arg>username=${TEST_USERNAME}</arg>
 <arg>password=${TEST_PASSWORD}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.132862" elapsed="0.000274"/>
+<status status="PASS" start="2026-06-17T11:22:59.596104" elapsed="0.000305"/>
 </kw>
 <kw name="Login User" owner="auth_keywords">
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.147842" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:22:59.773963" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
  path_url=/auth/login 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '38', 'Content-Type': 'application/json'} 
- body=b'{"username": "", "password": "pistol"}' 
+ body=b'{"username": "emilys", "password": ""}' 
  </msg>
-<msg time="2026-06-17T11:04:22.147901" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:22:59.774076" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
  status=400, reason=Bad Request 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '44', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2c-JAq5V8MKfWmWXvKJFTg6rvXRjdU"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=L1FEdvJrgVz5aaJa%2BpbplcpopCRjUTVbDts%2FKc%2BuCoKcLCtd8L5eqQY1wfE9DaeD8CnobpIUU99SnvCTczo8%2Fp0IF%2Fl6giMqKuUIRYSJtjxkOumYH%2FXdFaHxQS0Fh3Wk"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b25ce30615-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:22:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '44', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2c-JAq5V8MKfWmWXvKJFTg6rvXRjdU"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '97', 'x-ratelimit-reset': '1781695380', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=4WC7qKx47A5l%2Fs6u42V7FRxug2gKzErGkvyndM9VLB446o8fMvN7Sh6reQHRanMDtu6uZW0mJ94RGzw5ZKG86B3KrqTyOyO9ARETQ94rRcmqKQ6f%2F5VUEtIN%2Bu9SLOR6"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1adfa7ef51d99-SJC'} 
  body={"message":"Username and password required"} 
  </msg>
-<msg time="2026-06-17T11:04:22.147947" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:22:59.774168" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.148052" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:22:59.774352" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/auth/login</arg>
 <arg>json=&amp;{body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.133528" elapsed="0.014559"/>
+<status status="PASS" start="2026-06-17T11:22:59.596804" elapsed="0.177586"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.148161" elapsed="0.000032"/>
+<status status="PASS" start="2026-06-17T11:22:59.774495" elapsed="0.000056"/>
 </return>
-<msg time="2026-06-17T11:04:22.148301" level="INFO">${login} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:22:59.774715" level="INFO">${login} = &lt;Response [400]&gt;</msg>
 <var>${login}</var>
 <arg>&amp;{body}</arg>
-<status status="PASS" start="2026-06-17T11:04:22.133269" elapsed="0.015050"/>
+<status status="PASS" start="2026-06-17T11:22:59.596549" elapsed="0.178192"/>
 </kw>
 <kw name="Get From Dictionary">
-<msg time="2026-06-17T11:04:22.149390" level="FAIL">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</msg>
+<msg time="2026-06-17T11:22:59.775922" level="FAIL">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</msg>
 <var>${token}</var>
 <arg>${login.json()}</arg>
 <arg>accessToken</arg>
-<status status="FAIL" start="2026-06-17T11:04:22.149364" elapsed="0.000056">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="FAIL" start="2026-06-17T11:22:59.775892" elapsed="0.000063">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
 </kw>
 <kw name="Get Authenticated User" owner="auth_keywords">
 <var>${response}</var>
 <arg>${token}</arg>
-<status status="NOT RUN" start="2026-06-17T11:04:22.149588" elapsed="0.000025"/>
+<status status="NOT RUN" start="2026-06-17T11:22:59.776111" elapsed="0.000023"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-06-17T11:04:22.149702" elapsed="0.000017"/>
+<status status="NOT RUN" start="2026-06-17T11:22:59.776223" elapsed="0.000016"/>
 </kw>
 <kw name="Dictionary Should Contain Key">
 <arg>${response.json()}</arg>
 <arg>username</arg>
-<status status="NOT RUN" start="2026-06-17T11:04:22.149803" elapsed="0.000014"/>
+<status status="NOT RUN" start="2026-06-17T11:22:59.776324" elapsed="0.000040"/>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.132466" elapsed="0.017455">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="FAIL" start="2026-06-17T11:22:59.595789" elapsed="0.180698">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
 </test>
 <test id="s1-s1-t4" name="GET Authenticated User Without Token Returns 401" line="29">
 <kw name="Get Authenticated User" owner="auth_keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.150978" level="INFO">&amp;{headers} = { Authorization=Bearer invalid_token }</msg>
+<msg time="2026-06-17T11:22:59.777541" level="INFO">&amp;{headers} = { Authorization=Bearer invalid_token }</msg>
 <var>&amp;{headers}</var>
 <arg>Authorization=Bearer ${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.150772" elapsed="0.000228"/>
+<status status="PASS" start="2026-06-17T11:22:59.777293" elapsed="0.000269"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.168472" level="INFO">GET Request : url=https://dummyjson.com/auth/me 
+<msg time="2026-06-17T11:22:59.954449" level="INFO">GET Request : url=https://dummyjson.com/auth/me 
  path_url=/auth/me 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer invalid_token'} 
  body=None 
  </msg>
-<msg time="2026-06-17T11:04:22.168543" level="INFO">GET Response : url=https://dummyjson.com/auth/me 
+<msg time="2026-06-17T11:22:59.954545" level="INFO">GET Response : url=https://dummyjson.com/auth/me 
  status=401, reason=Unauthorized 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"24-xqucZbgfFI1MEKHBW2jR/IjHNdY"', 'Set-Cookie': 'accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '98', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=OpSqpK05DiDckPvvbkL7IAEMxSJlr0YOpg8KTopZQo8Rr9ovwKk8k41QlH69IhzWcPbfA5y5ronftKnlq8Etib8MmbDU7NoJWCJIY38hJqFxtxUpTLkFhKQf4vG8pSa7"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b27cfc0615-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:22:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"24-xqucZbgfFI1MEKHBW2jR/IjHNdY"', 'Set-Cookie': 'accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=xuTwWPqoucWyviwQbzCRUM0g0bORkrL2OWOTEnSbUtRlolN%2FGINqjjGfgd8%2FztU3jFJoXE27c%2FfW2GBLRQXBBTRB3%2F%2BADumrNmDnrWZslyuvPuGT5sHIj0B3jXd%2B9t2p"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1adfb98e61d99-SJC'} 
  body={"message":"Invalid/Expired Token!"} 
  </msg>
-<msg time="2026-06-17T11:04:22.168634" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:22:59.954607" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.168793" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<msg time="2026-06-17T11:22:59.954802" level="INFO">${response} = &lt;Response [401]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/auth/me</arg>
 <arg>headers=&amp;{headers}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.151086" elapsed="0.017739"/>
+<status status="PASS" start="2026-06-17T11:22:59.777650" elapsed="0.177188"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.168914" elapsed="0.000038"/>
+<status status="PASS" start="2026-06-17T11:22:59.954948" elapsed="0.000056"/>
 </return>
-<msg time="2026-06-17T11:04:22.169066" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<msg time="2026-06-17T11:22:59.955146" level="INFO">${response} = &lt;Response [401]&gt;</msg>
 <var>${response}</var>
 <arg>invalid_token</arg>
-<status status="PASS" start="2026-06-17T11:04:22.150523" elapsed="0.018561"/>
+<status status="PASS" start="2026-06-17T11:22:59.777067" elapsed="0.178110"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.169600" level="INFO">Argument types are:
+<msg time="2026-06-17T11:22:59.955804" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>401</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.169188" elapsed="0.000472"/>
+<status status="PASS" start="2026-06-17T11:22:59.955304" elapsed="0.000551"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.150120" elapsed="0.019631"/>
+<status status="PASS" start="2026-06-17T11:22:59.776710" elapsed="0.179245"/>
 </test>
 <kw name="Delete API Session" owner="api_keywords" type="TEARDOWN">
 <kw name="Delete All Sessions" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.170515" level="INFO">Deleting All Sessions</msg>
+<msg time="2026-06-17T11:22:59.956735" level="INFO">Deleting All Sessions</msg>
 <doc>Removes all the session objects</doc>
-<status status="PASS" start="2026-06-17T11:04:22.170456" elapsed="0.000154"/>
+<status status="PASS" start="2026-06-17T11:22:59.956674" elapsed="0.000137"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.170297" elapsed="0.000362"/>
+<status status="PASS" start="2026-06-17T11:22:59.956522" elapsed="0.000337"/>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:21.769069" elapsed="0.401613"/>
+<status status="FAIL" start="2026-06-17T11:22:58.420157" elapsed="1.536725"/>
 </suite>
 <suite id="s1-s2" name="Error Cases" source="/home/runner/work/robot-api-tests/robot-api-tests/tests/error_cases.robot">
 <kw name="Create API Session" owner="api_keywords" type="SETUP">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.175072" level="INFO">Creating Session using : alias=reqres, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2026-06-17T11:22:59.961252" level="INFO">Creating Session using : alias=reqres, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
 <arg>reqres</arg>
 <arg>${BASE_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-06-17T11:04:22.174846" elapsed="0.000361"/>
+<status status="PASS" start="2026-06-17T11:22:59.961062" elapsed="0.000351"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.174638" elapsed="0.000625"/>
+<status status="PASS" start="2026-06-17T11:22:59.960910" elapsed="0.000563"/>
 </kw>
 <test id="s1-s2-t1" name="GET Non-Existent User Returns 404" line="10">
 <kw name="Get User" owner="user_keywords">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.222056" level="INFO">GET Request : url=https://dummyjson.com/users/9999 
+<msg time="2026-06-17T11:23:00.719564" level="INFO">GET Request : url=https://dummyjson.com/users/9999 
  path_url=/users/9999 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-06-17T11:04:22.222150" level="INFO">GET Response : url=https://dummyjson.com/users/9999 
+<msg time="2026-06-17T11:23:00.719695" level="INFO">GET Response : url=https://dummyjson.com/users/9999 
  status=404, reason=Not Found 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '43', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2b-ZhauGgbHQlYpTPzEWJLt9JF5uhE"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '95', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=1cBF8avmedIQ%2Bb39JVzzvJeesaxcijyuvTWc%2BQ4jzlgiD5mx5EcvMHxquN%2BQ0nvBfaljHoA7KiLp4rKStoHG7VDfTiJUcC2EsJIQjtWDz%2FJUKk%2B7m7EjmUuEtplJcUH6"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b2d83acbf8-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '43', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2b-ZhauGgbHQlYpTPzEWJLt9JF5uhE"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=v71tVlyHELBUj9Viqz8oFVJlLSk3Yx6d1gtucUkw68T4oMd4Jm35XSQyJGIPmrOq9oUCrbzaaf6obVCvTyhka0Fy%2FifPwapQxT6%2Fx4gDEQX37sMeS396D54QbcrQK6IR"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1adfcfcb891f0-SJC'} 
  body={"message":"User with id '9999' not found"} 
  </msg>
-<msg time="2026-06-17T11:04:22.222238" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:00.719824" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.222393" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-06-17T11:23:00.719998" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/users/${user_id}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.175832" elapsed="0.046605"/>
+<status status="PASS" start="2026-06-17T11:22:59.962046" elapsed="0.757992"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.222551" elapsed="0.000079"/>
+<status status="PASS" start="2026-06-17T11:23:00.720155" elapsed="0.000068"/>
 </return>
-<msg time="2026-06-17T11:04:22.222762" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-06-17T11:23:00.720465" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>${INVALID_USER_ID}</arg>
-<status status="PASS" start="2026-06-17T11:04:22.175608" elapsed="0.047174"/>
+<status status="PASS" start="2026-06-17T11:22:59.961818" elapsed="0.758684"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.223320" level="INFO">Argument types are:
+<msg time="2026-06-17T11:23:00.721388" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>404</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.222911" elapsed="0.000458"/>
+<status status="PASS" start="2026-06-17T11:23:00.720704" elapsed="0.000747"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.175306" elapsed="0.048158"/>
+<status status="PASS" start="2026-06-17T11:22:59.961519" elapsed="0.760042"/>
 </test>
 <test id="s1-s2-t2" name="POST Login With Missing Password Returns 400" line="14">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.224260" level="INFO">&amp;{body} = { username= }</msg>
+<msg time="2026-06-17T11:23:00.722294" level="INFO">&amp;{body} = { username=emilys }</msg>
 <var>&amp;{body}</var>
 <arg>username=${TEST_USERNAME}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.224038" elapsed="0.000244"/>
+<status status="PASS" start="2026-06-17T11:23:00.722068" elapsed="0.000247"/>
 </kw>
 <kw name="Login User" owner="auth_keywords">
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.235047" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:23:00.904227" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
  path_url=/auth/login 
- headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '16', 'Content-Type': 'application/json'} 
- body=b'{"username": ""}' 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '22', 'Content-Type': 'application/json'} 
+ body=b'{"username": "emilys"}' 
  </msg>
-<msg time="2026-06-17T11:04:22.235103" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:23:00.904328" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
  status=400, reason=Bad Request 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '44', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2c-JAq5V8MKfWmWXvKJFTg6rvXRjdU"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '94', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=NnWKj2KOrzV8t9NxE%2BlEhHJPIWZPhhZp0BfhWg6ggvTXcB%2B54mmmZhlz1wCD8hphZpnVHe9AhUfRlazt%2Bid%2BTntWMvuA86cv0MHc6907bHQbEpy6DiUIbWHu5BaAFoCD"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b2e884cbf8-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '44', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2c-JAq5V8MKfWmWXvKJFTg6rvXRjdU"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '98', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=oDRQJxrUdtV3Mo6s2v0h7OhO8tmbzbcJXKPd5LIHAW4OaDIiZhEPDC9jR1YnuVngDRJ8iaAn4v%2FUVFDADFxM5GHam%2BtZeqSblgEdvCBuCEKpSXzmcbCWSrmgeUvJNnZE"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae018dbd91f0-SJC'} 
  body={"message":"Username and password required"} 
  </msg>
-<msg time="2026-06-17T11:04:22.235146" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:00.904440" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.235263" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:23:00.904642" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/auth/login</arg>
 <arg>json=&amp;{body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.224710" elapsed="0.010584"/>
+<status status="PASS" start="2026-06-17T11:23:00.722767" elapsed="0.181920"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.235374" elapsed="0.000040"/>
+<status status="PASS" start="2026-06-17T11:23:00.904811" elapsed="0.000048"/>
 </return>
-<msg time="2026-06-17T11:04:22.235555" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:23:00.904989" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>&amp;{body}</arg>
-<status status="PASS" start="2026-06-17T11:04:22.224422" elapsed="0.011190"/>
+<status status="PASS" start="2026-06-17T11:23:00.722505" elapsed="0.182503"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.236211" level="INFO">Argument types are:
+<msg time="2026-06-17T11:23:00.905591" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>400</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.235740" elapsed="0.000517"/>
+<status status="PASS" start="2026-06-17T11:23:00.905137" elapsed="0.000503"/>
 </kw>
 <kw name="Dictionary Should Contain Key">
-<msg time="2026-06-17T11:04:22.237037" level="FAIL">No keyword with name 'Dictionary Should Contain Key' found.</msg>
+<msg time="2026-06-17T11:23:00.906434" level="FAIL">No keyword with name 'Dictionary Should Contain Key' found.</msg>
 <arg>${response.json()}</arg>
 <arg>message</arg>
-<status status="FAIL" start="2026-06-17T11:04:22.237011" elapsed="0.000056">No keyword with name 'Dictionary Should Contain Key' found.</status>
+<status status="FAIL" start="2026-06-17T11:23:00.906408" elapsed="0.000057">No keyword with name 'Dictionary Should Contain Key' found.</status>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.223689" elapsed="0.013497">No keyword with name 'Dictionary Should Contain Key' found.</status>
+<status status="FAIL" start="2026-06-17T11:23:00.721746" elapsed="0.184849">No keyword with name 'Dictionary Should Contain Key' found.</status>
 </test>
 <test id="s1-s2-t3" name="POST Login With Wrong Credentials Returns 400" line="20">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.237919" level="INFO">&amp;{body} = { username=nobody | password=wrongpass }</msg>
+<msg time="2026-06-17T11:23:00.907399" level="INFO">&amp;{body} = { username=nobody | password=wrongpass }</msg>
 <var>&amp;{body}</var>
 <arg>username=nobody</arg>
 <arg>password=wrongpass</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.237749" elapsed="0.000191"/>
+<status status="PASS" start="2026-06-17T11:23:00.907191" elapsed="0.000231"/>
 </kw>
 <kw name="Login User" owner="auth_keywords">
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.251006" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:23:01.088458" level="INFO">POST Request : url=https://dummyjson.com/auth/login 
  path_url=/auth/login 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
  body=b'{"username": "nobody", "password": "wrongpass"}' 
  </msg>
-<msg time="2026-06-17T11:04:22.251075" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
+<msg time="2026-06-17T11:23:01.088547" level="INFO">POST Response : url=https://dummyjson.com/auth/login 
  status=400, reason=Bad Request 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '33', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"21-dBEoW0UmTF+EGUMaprEp9/8zNNA"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '93', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=DckU6vucQWhZN11%2FH1njxudQqRXwR%2BdqwLlhHGsi6F2LHpwhktQozJTuhYrdwpwyXaxerhZjcmSy7LeKt4sfx23eBgCdUATBlJPrLRhpd7G1HXWwj%2FdGtDkA4lRFWcsU"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b308c8cbf8-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '33', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"21-dBEoW0UmTF+EGUMaprEp9/8zNNA"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '97', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=g9tMhKiu2Jj0JNYMeHzxo6LErPvYt1xFzaCGcPPsNvFIRFWjttZfJlLPNh7EAZJJPcdHrpoowCXrzRTMbPOFzkPmtdyjt2ULDEChYOnHbh4hQ6tN6eoZwRJoWbR9zXht"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae02ae0091f0-SJC'} 
  body={"message":"Invalid credentials"} 
  </msg>
-<msg time="2026-06-17T11:04:22.251127" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:01.088608" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.251241" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:23:01.088725" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/auth/login</arg>
 <arg>json=&amp;{body}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.238309" elapsed="0.012971"/>
+<status status="PASS" start="2026-06-17T11:23:00.907866" elapsed="0.180895"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.251364" elapsed="0.000044"/>
+<status status="PASS" start="2026-06-17T11:23:01.088874" elapsed="0.000058"/>
 </return>
-<msg time="2026-06-17T11:04:22.251603" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<msg time="2026-06-17T11:23:01.089110" level="INFO">${response} = &lt;Response [400]&gt;</msg>
 <var>${response}</var>
 <arg>&amp;{body}</arg>
-<status status="PASS" start="2026-06-17T11:04:22.238066" elapsed="0.013567"/>
+<status status="PASS" start="2026-06-17T11:23:00.907605" elapsed="0.181533"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.252195" level="INFO">Argument types are:
+<msg time="2026-06-17T11:23:01.089825" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>400</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.251763" elapsed="0.000478"/>
+<status status="PASS" start="2026-06-17T11:23:01.089323" elapsed="0.000551"/>
 </kw>
 <kw name="Dictionary Should Contain Key">
-<msg time="2026-06-17T11:04:22.252978" level="FAIL">No keyword with name 'Dictionary Should Contain Key' found.</msg>
+<msg time="2026-06-17T11:23:01.090671" level="FAIL">No keyword with name 'Dictionary Should Contain Key' found.</msg>
 <arg>${response.json()}</arg>
 <arg>message</arg>
-<status status="FAIL" start="2026-06-17T11:04:22.252954" elapsed="0.000065">No keyword with name 'Dictionary Should Contain Key' found.</status>
+<status status="FAIL" start="2026-06-17T11:23:01.090646" elapsed="0.000056">No keyword with name 'Dictionary Should Contain Key' found.</status>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.237379" elapsed="0.015752">No keyword with name 'Dictionary Should Contain Key' found.</status>
+<status status="FAIL" start="2026-06-17T11:23:00.906807" elapsed="0.184022">No keyword with name 'Dictionary Should Contain Key' found.</status>
 </test>
 <test id="s1-s2-t4" name="GET Protected Endpoint Without Token Returns 401" line="26">
 <kw name="Get Authenticated User" owner="auth_keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.254119" level="INFO">&amp;{headers} = { Authorization=Bearer invalid_token }</msg>
+<msg time="2026-06-17T11:23:01.091917" level="INFO">&amp;{headers} = { Authorization=Bearer invalid_token }</msg>
 <var>&amp;{headers}</var>
 <arg>Authorization=Bearer ${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.253924" elapsed="0.000216"/>
+<status status="PASS" start="2026-06-17T11:23:01.091706" elapsed="0.000233"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.264623" level="INFO">GET Request : url=https://dummyjson.com/auth/me 
+<msg time="2026-06-17T11:23:01.272935" level="INFO">GET Request : url=https://dummyjson.com/auth/me 
  path_url=/auth/me 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer invalid_token'} 
  body=None 
  </msg>
-<msg time="2026-06-17T11:04:22.264682" level="INFO">GET Response : url=https://dummyjson.com/auth/me 
+<msg time="2026-06-17T11:23:01.273021" level="INFO">GET Response : url=https://dummyjson.com/auth/me 
  status=401, reason=Unauthorized 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"24-xqucZbgfFI1MEKHBW2jR/IjHNdY"', 'Set-Cookie': 'accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '92', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=vxbbX6dXtlMVpMCNex7iiW7%2BAC4%2BugnieRHwXDNjWlLSFg98mCI0gGjoWhI%2F6WerDKJDnaDtuDLFWpIfmKXjU%2FWnWG1rddDeXRsPsWie%2FryUDy5umgNIOXfv4tYzZkOr"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b3191dcbf8-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"24-xqucZbgfFI1MEKHBW2jR/IjHNdY"', 'Set-Cookie': 'accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT, refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '96', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=205JM2dcQnWFUC%2FhexPeW1we30nP9bsIAjSeQTNdKSl4RiCHa7x%2FuOGuUgY4EEPLINDHqOPetdHzZxEy73qfU3ETG3XOMtHpbCUgMGiBUQbXQtnRZnCNLEjRdWwp148e"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae03de3891f0-SJC'} 
  body={"message":"Invalid/Expired Token!"} 
  </msg>
-<msg time="2026-06-17T11:04:22.264735" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:01.273153" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.264862" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<msg time="2026-06-17T11:23:01.273283" level="INFO">${response} = &lt;Response [401]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/auth/me</arg>
 <arg>headers=&amp;{headers}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.254227" elapsed="0.010667"/>
+<status status="PASS" start="2026-06-17T11:23:01.092029" elapsed="0.181294"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.264962" elapsed="0.000034"/>
+<status status="PASS" start="2026-06-17T11:23:01.273458" elapsed="0.000058"/>
 </return>
-<msg time="2026-06-17T11:04:22.265132" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<msg time="2026-06-17T11:23:01.273691" level="INFO">${response} = &lt;Response [401]&gt;</msg>
 <var>${response}</var>
 <arg>invalid_token</arg>
-<status status="PASS" start="2026-06-17T11:04:22.253724" elapsed="0.011433"/>
+<status status="PASS" start="2026-06-17T11:23:01.091485" elapsed="0.182233"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.265709" level="INFO">Argument types are:
+<msg time="2026-06-17T11:23:01.274359" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>401</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.265274" elapsed="0.000482"/>
+<status status="PASS" start="2026-06-17T11:23:01.273887" elapsed="0.000525"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.253322" elapsed="0.012522"/>
+<status status="PASS" start="2026-06-17T11:23:01.091037" elapsed="0.183478"/>
 </test>
 <kw name="Delete API Session" owner="api_keywords" type="TEARDOWN">
 <kw name="Delete All Sessions" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.266430" level="INFO">Deleting All Sessions</msg>
+<msg time="2026-06-17T11:23:01.275166" level="INFO">Deleting All Sessions</msg>
 <doc>Removes all the session objects</doc>
-<status status="PASS" start="2026-06-17T11:04:22.266373" elapsed="0.000110"/>
+<status status="PASS" start="2026-06-17T11:23:01.275107" elapsed="0.000120"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.266235" elapsed="0.000293"/>
+<status status="PASS" start="2026-06-17T11:23:01.274948" elapsed="0.000325"/>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.171106" elapsed="0.095444"/>
+<status status="FAIL" start="2026-06-17T11:22:59.957349" elapsed="1.317948"/>
 </suite>
 <suite id="s1-s3" name="Users Crud" source="/home/runner/work/robot-api-tests/robot-api-tests/tests/users_crud.robot">
 <kw name="Create API Session" owner="api_keywords" type="SETUP">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.269095" level="INFO">Creating Session using : alias=reqres, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2026-06-17T11:23:01.277990" level="INFO">Creating Session using : alias=reqres, url=https://dummyjson.com, headers={},                     cookies={}, auth=None, timeout=10, proxies=None, verify=False,                     debug=0 </msg>
 <arg>reqres</arg>
 <arg>${BASE_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-06-17T11:04:22.268923" elapsed="0.000289"/>
+<status status="PASS" start="2026-06-17T11:23:01.277809" elapsed="0.000310"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.268756" elapsed="0.000512"/>
+<status status="PASS" start="2026-06-17T11:23:01.277622" elapsed="0.000552"/>
 </kw>
 <test id="s1-s3-t1" name="GET Users Returns Non-Empty List" line="9">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.313359" level="INFO">GET Request : url=https://dummyjson.com/users 
+<msg time="2026-06-17T11:23:01.323819" level="INFO">GET Request : url=https://dummyjson.com/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-06-17T11:04:22.313459" level="INFO">GET Response : url=https://dummyjson.com/users 
+<msg time="2026-06-17T11:23:01.323907" level="INFO">GET Response : url=https://dummyjson.com/users 
  status=200, reason=OK 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=uWtfm%2FrxM7tpchKapvrAonO8y2SWwC%2FTWIrYpFzuRRiRbAriKOecGIppxL3A14r2E8P%2FWBRMA5PegAYkxJz5kPO1IjDPIqKk0iyqak95fD%2BExBPHpml0ErNg6oFHpVQM"}]}', 'etag': 'W/"a3b1-Wc+qCYPJ2IxKpnt00AlusGYMzCE"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781545511', 'x-xss-protection': '1; mode=block', 'Age': '148761', 'Cache-Control': 'no-store', 'cf-cache-status': 'HIT', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b36f41ae0c-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=zGhJiDqMILyNIMkHVfvSVVCfg9zBkT2NQop6lTvKtWTHsXunaqaA1O%2BOOMXLL%2B%2BzfegrU1tyCd%2FBdIJgfEIQsuwnX7g0xrAgcTMFItl090b2Sr%2FhgFzcD738ZDkxt5GS"}]}', 'etag': 'W/"a3b1-Wc+qCYPJ2IxKpnt00AlusGYMzCE"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781545769', 'x-xss-protection': '1; mode=block', 'Age': '149613', 'Cache-Control': 'no-store', 'cf-cache-status': 'HIT', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae053ec1ed3b-SJC'} 
  body={"users":[{"id":1,"firstName":"Emily","lastName":"Johnson","maidenName":"Smith","age":29,"gender":"female","email":"emily.johnson@x.dummyjson.com","phone":"+81 965-431-3024","username":"emilys","password":"emilyspass","birthDate":"1996-5-30","image":"https://dummyjson.com/icon/emilys/128","bloodGroup":"O-","height":193.24,"weight":63.16,"eyeColor":"Green","hair":{"color":"Brown","type":"Curly"},"ip":"42.48.100.32","address":{"address":"626 Main Street","city":"Phoenix","state":"Mississippi","stateCode":"MS","postalCode":"29112","coordinates":{"lat":-77.16213,"lng":-92.084824},"country":"United States"},"macAddress":"47:fa:41:18:ec:eb","university":"University of Wisconsin--Madison","bank":{"cardExpire":"05/28","cardNumber":"3693233511855044","cardType":"Diners Club International","currency":"GBP","iban":"GB74MH2UZLR9TRPHYNU8F8"},"company":{"department":"Engineering","name":"Dooley, Kozey and Cronin","title":"Sales Manager","address":{"address":"263 Tenth Street","city":"San Francisco","state":"Wisconsin","stateCode":"WI","postalCode":"37657","coordinates":{"lat":71.814525,"lng":-161.150263},"country":"United States"}},"ein":"977-175","ssn":"900-590-289","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin"},{"id":2,"firstName":"Michael","lastName":"Williams","maidenName":"","age":36,"gender":"male","email":"michael.williams@x.dummyjson.com","phone":"+49 258-627-6644","username":"michaelw","password":"michaelwpass","birthDate":"1989-8-10","image":"https://dummyjson.com/icon/michaelw/128","bloodGroup":"B+","height":186.22,"weight":76.32,"eyeColor":"Red","hair":{"color":"Green","type":"Straight"},"ip":"12.13.116.142","address":{"address":"385 Fifth Street","city":"Houston","state":"Alabama","stateCode":"AL","postalCode":"38807","coordinates":{"lat":22.815468,"lng":115.608581},"country":"United States"},"macAddress":"79:15:78:99:60:aa","university":"Ohio State University","bank":{"cardExpire":"01/30","cardNumber":"3530633803003665","cardType":"JCB","currency":"USD","iban":"DE26362283149158045865"},"company":{"department":"Support","name":"Spinka - Dickinson","title":"Support Specialist","address":{"address":"395 Main Street","city":"Los Angeles","state":"New Hampshire","stateCode":"NH","postalCode":"73442","coordinates":{"lat":79.098326,"lng":-119.624845},"country":"United States"}},"ein":"912-602","ssn":"108-953-962","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/97.0.1072.76 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin"},{"id":3,"firstName":"Sophia","lastName":"Brown","maidenName":"","age":43,"gender":"female","email":"sophia.brown@x.dummyjson.com","phone":"+81 210-652-2785","username":"sophiab","password":"sophiabpass","birthDate":"1982-11-6","image":"https://dummyjson.com/icon/sophiab/128","bloodGroup":"O-","height":177.72,"weight":52.6,"eyeColor":"Hazel","hair":{"color":"White","type":"Wavy"},"ip":"214.225.51.195","address":{"address":"1642 Ninth Street","city":"Washington","state":"Alabama","stateCode":"AL","postalCode":"32822","coordinates":{"lat":45.289366,"lng":46.832664},"country":"United States"},"macAddress":"12:a3:d3:6f:5c:5b","university":"Pepperdine University","bank":{"cardExpire":"10/27","cardNumber":"6011212053392887","cardType":"Discover","currency":"EUR","iban":"DE12191213468288004835"},"company":{"department":"Research and Development","name":"Schiller - Zieme","title":"Accountant","address":{"address":"1896 Washington Street","city":"Dallas","state":"Nevada","stateCode":"NV","postalCode":"88511","coordinates":{"lat":20.086743,"lng":-34.577107},"country":"United States"}},"ein":"963-113","ssn":"638-461-822","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin"},{"id":4,"firstName":"James","lastName":"Davis","maidenName":"","age":46,"gender":"male","email":"james.davis@x.dummyjson.com","phone":"+49 614-958-9364","username":"jamesd","password":"jamesdpass","birthDate":"1979-5-4","image":"https://dummyjson.com/icon/jamesd/128","bloodGroup":"AB+","height":193.31,"weight":62.1,"eyeColor":"Amber","hair":{"color":"Blonde","type":"Straight"},"ip":"101.118.131.66","address":{"address":"238 Jefferson Street","city":"Seattle","state":"Pennsylvania","stateCode":"PA","postalCode":"68354","coordinates":{"lat":16.782513,"lng":-139.34723},"country":"United States"},"macAddress":"10:7d:df:1f:97:58","university":"University of Southern California","bank":{"cardExpire":"07/30","cardNumber":"5303440212268149","cardType":"Mastercard","currency":"CAD","iban":"DE01300746880579852937"},"company":{"department":"Support","name":"Pagac and Sons","title":"Research Analyst","address":{"address":"1622 Lincoln Street","city":"Fort Worth","state":"Pennsylvania","stateCode":"PA","postalCode":"27768","coordinates":{"lat":54.91193,"lng":-79.498328},"country":"United States"}},"ein":"904-810","ssn":"116-951-314","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin"},{"id":5,"firstName":"Emma","lastName":"Miller","maidenName":"Johnson","age":31,"gender":"female","email":"emma.miller@x.dummyjson.com","phone":"+91 759-776-1614","username":"emmaj","password":"emmajpass","birthDate":"1994-6-13","image":"https://dummyjson.com/icon/emmaj/128","bloodGroup":"AB-","height":192.8,"weight":63.62,"eyeColor":"Green","hair":{"color":"White","type":"Straight"},"ip":"224.126.22.183","address":{"address":"607 Fourth Street","city":"Jacksonville","state":"Colorado","stateCode":"CO","postalCode":"26593","coordinates":{"lat":0.505589,"lng":-157.43281},"country":"United States"},"macAddress":"32:b9:7e:8d:f5:e8","university":"Northeastern University","bank":{"cardExpire":"07/30","cardNumber":"5237188057591130","cardType":"Mastercard","currency":"NZD","iban":"DE19182355652037133559"},"company":{"department":"Human Resources","name":"Graham - Gulgowski","title":"Quality Assurance Engineer","address":{"address":"1460 Sixth Street","city":"San Antonio","state":"Idaho","stateCode":"ID","postalCode":"21965","coordinates":{"lat":44.346545,"lng":-26.944701},"country":"United States"}},"ein":"403-505","ssn":"526-210-885","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin"},{"id":6,"firstName":"Olivia","lastName":"Wilson","maidenName":"","age":23,"gender":"female","email":"olivia.wilson@x.dummyjson.com","phone":"+91 607-295-6448","username":"oliviaw","password":"oliviawpass","birthDate":"2002-4-20","image":"https://dummyjson.com/icon/oliviaw/128","bloodGroup":"B+","height":182.61,"weight":58,"eyeColor":"Hazel","hair":{"color":"Gray","type":"Curly"},"ip":"249.178.112.207","address":{"address":"547 First Street","city":"Fort Worth","state":"Tennessee","stateCode":"TN","postalCode":"83843","coordinates":{"lat":75.32627,"lng":-26.15285},"country":"United States"},"macAddress":"9c:7f:ea:34:18:19","university":"University of North Carolina--Chapel Hill","bank":{"cardExpire":"06/30","cardNumber":"376320072452632","cardType":"American Express","currency":"NZD","iban":"DE21153814367894194071"},"company":{"department":"Product Management","name":"Pfannerstill Inc","title":"Research Analyst","address":{"address":"425 Sixth Street","city":"Indianapolis","state":"Oklahoma","stateCode":"OK","postalCode":"74263","coordinates":{"lat":74.986644,"lng":-132.916888},"country":"United States"}},"ein":"921-709","ssn":"836-772-168","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"moderator"},{"id":7,"firstName":"Alexander","lastName":"Jones","maidenName":"","age":39,"gender":"male","email":"alexander.jones@x.dummyjson.com","phone":"+61 260-824-4986","username":"alexanderj","password":"alexanderjpass","birthDate":"1986-10-20","image":"https://dummyjson.com/icon/alexanderj/128","bloodGroup":"AB-","height":153.89,"weight":77.42,"eyeColor":"Blue","hair":{"color":"White","type":"Straight"},"ip":"166.204.84.32","address":{"address":"664 Maple Street","city":"Indianapolis","state":"Delaware","stateCode":"DE","postalCode":"86684","coordinates":{"lat":35.289664,"lng":7.063255},"country":"United States"},"macAddress":"d2:64:58:2d:1c:46","university":"University of Illinois--Urbana-Champaign","bank":{"cardExpire":"12/29","cardNumber":"5189302549548693","cardType":"Mastercard","currency":"PKR","iban":"DE67517655968963441488"},"company":{"department":"Engineering","name":"Dickens - Beahan","title":"Web Developer","address":{"address":"996 Eighth Street","city":"Washington","state":"Kansas","stateCode":"KS","postalCode":"27858","coordinates":{"lat":-75.462366,"lng":-128.025697},"country":"United States"}},"ein":"638-127","ssn":"722-993-925","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"moderator"},{"id":8,"firstName":"Ava","lastName":"Taylor","maidenName":"","age":28,"gender":"female","email":"ava.taylor@x.dummyjson.com","phone":"+1 458-853-7877","username":"avat","password":"avatpas... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2026-06-17T11:04:22.313656" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:01.324057" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.313777" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:01.324182" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/users</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.269539" elapsed="0.044273"/>
+<status status="PASS" start="2026-06-17T11:23:01.278501" elapsed="0.045714"/>
 </kw>
 <kw name="Get From Dictionary">
-<msg time="2026-06-17T11:04:22.315043" level="FAIL">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</msg>
+<msg time="2026-06-17T11:23:01.325423" level="FAIL">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</msg>
 <var>${data}</var>
 <arg>${response.json()}</arg>
 <arg>users</arg>
-<status status="FAIL" start="2026-06-17T11:04:22.315014" elapsed="0.000068">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="FAIL" start="2026-06-17T11:23:01.325393" elapsed="0.000067">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${data}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2026-06-17T11:04:22.315191" elapsed="0.000019"/>
+<status status="NOT RUN" start="2026-06-17T11:23:01.325572" elapsed="0.000018"/>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.269311" elapsed="0.046016">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="FAIL" start="2026-06-17T11:23:01.278219" elapsed="0.047492">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
 </test>
 <test id="s1-s3-t2" name="GET Single User Returns Correct ID" line="14">
 <kw name="Get User" owner="user_keywords">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.329343" level="INFO">GET Request : url=https://dummyjson.com/users/1 
+<msg time="2026-06-17T11:23:01.499238" level="INFO">GET Request : url=https://dummyjson.com/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-06-17T11:04:22.329416" level="INFO">GET Response : url=https://dummyjson.com/users/1 
+<msg time="2026-06-17T11:23:01.499326" level="INFO">GET Response : url=https://dummyjson.com/users/1 
  status=200, reason=OK 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=JIJCO4L6fRTdQXSAZaJIGphqGkKR%2FbmhSDdoRcEBHGP%2BS9XzN8iyhhHMhXbuhHdnAHQzm5Ugows%2BtttacD7wq9Mq%2FrODTOtKCdzOPPGNASecX%2B3RV5hBO%2FRvIt6frVgk"}]}', 'etag': 'W/"58f-CoL/KoXlW3x1PtqQr3wqPsXj6DE"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b37f66ae0c-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=hiQRZMfk6zIpt3zFIPX3q3r%2BzNLxyFcbylXIKEA0KeIGkgdbP9yRFd8z6Uq6PXlRhYvFeDfGDDfhyn0fLCEuVG0SeeqtAtA4vc9wyKp41kFXaLsDOKumLjEEJMzCZreH"}]}', 'etag': 'W/"58f-CoL/KoXlW3x1PtqQr3wqPsXj6DE"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '99', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae054efaed3b-SJC'} 
  body={"id":1,"firstName":"Emily","lastName":"Johnson","maidenName":"Smith","age":29,"gender":"female","email":"emily.johnson@x.dummyjson.com","phone":"+81 965-431-3024","username":"emilys","password":"emilyspass","birthDate":"1996-5-30","image":"https://dummyjson.com/icon/emilys/128","bloodGroup":"O-","height":193.24,"weight":63.16,"eyeColor":"Green","hair":{"color":"Brown","type":"Curly"},"ip":"42.48.100.32","address":{"address":"626 Main Street","city":"Phoenix","state":"Mississippi","stateCode":"MS","postalCode":"29112","coordinates":{"lat":-77.16213,"lng":-92.084824},"country":"United States"},"macAddress":"47:fa:41:18:ec:eb","university":"University of Wisconsin--Madison","bank":{"cardExpire":"05/28","cardNumber":"3693233511855044","cardType":"Diners Club International","currency":"GBP","iban":"GB74MH2UZLR9TRPHYNU8F8"},"company":{"department":"Engineering","name":"Dooley, Kozey and Cronin","title":"Sales Manager","address":{"address":"263 Tenth Street","city":"San Francisco","state":"Wisconsin","stateCode":"WI","postalCode":"37657","coordinates":{"lat":71.814525,"lng":-161.150263},"country":"United States"}},"ein":"977-175","ssn":"900-590-289","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin"} 
  </msg>
-<msg time="2026-06-17T11:04:22.329479" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:01.499424" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.329619" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:01.499557" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/users/${user_id}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.316211" elapsed="0.013448"/>
+<status status="PASS" start="2026-06-17T11:23:01.326608" elapsed="0.172983"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.329743" elapsed="0.000050"/>
+<status status="PASS" start="2026-06-17T11:23:01.499692" elapsed="0.000058"/>
 </return>
-<msg time="2026-06-17T11:04:22.329966" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:01.499919" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${VALID_USER_ID}</arg>
-<status status="PASS" start="2026-06-17T11:04:22.315964" elapsed="0.014032"/>
+<status status="PASS" start="2026-06-17T11:23:01.326360" elapsed="0.173585"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.330646" level="INFO">Argument types are:
+<msg time="2026-06-17T11:23:01.500572" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.330150" elapsed="0.000546"/>
+<status status="PASS" start="2026-06-17T11:23:01.500107" elapsed="0.000515"/>
 </kw>
 <kw name="Get From Dictionary">
-<msg time="2026-06-17T11:04:22.331753" level="FAIL">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</msg>
+<msg time="2026-06-17T11:23:01.501757" level="FAIL">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</msg>
 <var>${data}</var>
 <arg>${response.json()}</arg>
 <arg>id</arg>
-<status status="FAIL" start="2026-06-17T11:04:22.331729" elapsed="0.000054">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="FAIL" start="2026-06-17T11:23:01.501726" elapsed="0.000063">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${data}</arg>
 <arg>${VALID_USER_ID}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-06-17T11:04:22.331879" elapsed="0.000017"/>
+<status status="NOT RUN" start="2026-06-17T11:23:01.501885" elapsed="0.000017"/>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.315528" elapsed="0.016473">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="FAIL" start="2026-06-17T11:23:01.325928" elapsed="0.176091">No keyword with name 'Get From Dictionary' found. Did you try using keyword 'RequestsLibrary.GET' and forgot to use enough whitespace between keyword and arguments?</status>
 </test>
 <test id="s1-s3-t3" name="GET Non-Existent User Returns 404" line="20">
 <kw name="Get User" owner="user_keywords">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.342861" level="INFO">GET Request : url=https://dummyjson.com/users/9999 
+<msg time="2026-06-17T11:23:01.674930" level="INFO">GET Request : url=https://dummyjson.com/users/9999 
  path_url=/users/9999 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-06-17T11:04:22.342930" level="INFO">GET Response : url=https://dummyjson.com/users/9999 
+<msg time="2026-06-17T11:23:01.675033" level="INFO">GET Response : url=https://dummyjson.com/users/9999 
  status=404, reason=Not Found 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '43', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2b-ZhauGgbHQlYpTPzEWJLt9JF5uhE"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '98', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=0k78Wj5RnvHw%2B%2BFmL4ojW1anFwi3JBP1ylaIvIKIrr86lnO1lw4m6WC%2Baims8RzlfGFsIWe78kjbMyLBDMPT6QKeV40uSTta6OcWKEXJe6Q%2B2Z4vJ6x7MNGA4bW%2BkQ%2Fm"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b39f93ae0c-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '43', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"2b-ZhauGgbHQlYpTPzEWJLt9JF5uhE"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '98', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=D1u5xv4cDbrCTpQjwVms1AXAkRaCismGv%2F7WJMl9v4aL5l%2F6T5ItBioCX1fJQLV8dchuMez1f07%2BLyeD%2BJYT%2FpAupLAHnR3j%2FZATT8XCOBVBRWe%2FZVdVKMjzwFdWjau1"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae0668ebed3b-SJC'} 
  body={"message":"User with id '9999' not found"} 
  </msg>
-<msg time="2026-06-17T11:04:22.343020" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:01.675160" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.343125" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-06-17T11:23:01.675285" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/users/${user_id}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.332825" elapsed="0.010340"/>
+<status status="PASS" start="2026-06-17T11:23:01.502895" elapsed="0.172425"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.343247" elapsed="0.000042"/>
+<status status="PASS" start="2026-06-17T11:23:01.675447" elapsed="0.000056"/>
 </return>
-<msg time="2026-06-17T11:04:22.343457" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-06-17T11:23:01.675638" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>${INVALID_USER_ID}</arg>
-<status status="PASS" start="2026-06-17T11:04:22.332584" elapsed="0.010905"/>
+<status status="PASS" start="2026-06-17T11:23:01.502655" elapsed="0.173003"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.344095" level="INFO">Argument types are:
+<msg time="2026-06-17T11:23:01.676198" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>404</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.343659" elapsed="0.000488"/>
+<status status="PASS" start="2026-06-17T11:23:01.675784" elapsed="0.000464"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.332184" elapsed="0.012049"/>
+<status status="PASS" start="2026-06-17T11:23:01.502223" elapsed="0.174154"/>
 </test>
 <test id="s1-s3-t4" name="POST Create User Returns 201 With Data" line="24">
 <kw name="Create User" owner="user_keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.345241" level="INFO">&amp;{body} = { firstName=John Doe | lastName=QA Engineer }</msg>
+<msg time="2026-06-17T11:23:01.677392" level="INFO">&amp;{body} = { firstName=John Doe | lastName=QA Engineer }</msg>
 <var>&amp;{body}</var>
 <arg>firstName=${first_name}</arg>
 <arg>lastName=${last_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.345003" elapsed="0.000260"/>
+<status status="PASS" start="2026-06-17T11:23:01.677125" elapsed="0.000291"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.355153" level="INFO">POST Request : url=https://dummyjson.com/users/add 
+<msg time="2026-06-17T11:23:01.848111" level="INFO">POST Request : url=https://dummyjson.com/users/add 
  path_url=/users/add 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '52', 'Content-Type': 'application/json'} 
  body=b'{"firstName": "John Doe", "lastName": "QA Engineer"}' 
  </msg>
-<msg time="2026-06-17T11:04:22.355224" level="INFO">POST Response : url=https://dummyjson.com/users/add 
+<msg time="2026-06-17T11:23:01.848212" level="INFO">POST Response : url=https://dummyjson.com/users/add 
  status=201, reason=Created 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '778', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"30a-5TrleaXwBmCulXQ4YX9GC0pD9ik"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '97', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=zDE8N0GkzbGYwXZsN7hoeeUbgZhDG2u%2F01hD5BjtKo2SxnykXYrFN%2Fy83k%2FPox4buS53XSdAPy9zvE0HWyu477ancG9FlYcD9r8yrZhliwc97YK4q9up8BFuwMDc4YuH"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b3afb4ae0c-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '778', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'etag': 'W/"30a-5TrleaXwBmCulXQ4YX9GC0pD9ik"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '97', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=3IjUEVYp8Hm3XqPpXN62r0H9FnSdeFI7bk3mJJBZ10lCPZx%2B%2FY8o31VeDhG8cCCN39Xkyg%2B%2FVSu98a%2F93jcnftEMCgxcajByvT1No%2B0Kgl0g7Xu96gpmKOF%2B4X%2BndyVe"}]}', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae077aabed3b-SJC'} 
  body={"id":209,"firstName":"John Doe","lastName":"QA Engineer","maidenName":"","age":null,"gender":"","email":"","phone":"","username":"","password":"","birthDate":"","image":"","bloodGroup":"","height":null,"weight":null,"eyeColor":"","hair":{"color":"","type":""},"ip":"","address":{"address":"","city":"","state":"","stateCode":"","postalCode":"","coordinates":{"lat":null,"lng":null},"country":""},"macAddress":"","university":"","bank":{"cardExpire":"","cardNumber":"","cardType":"","currency":"","iban":""},"company":{"department":"","name":"","title":"","address":{"address":"","city":"","state":"","stateCode":"","postalCode":"","coordinates":{"lat":null,"lng":null},"country":""}},"ein":"","ssn":"","userAgent":"","crypto":{"coin":"","wallet":"","network":""},"role":"user"} 
  </msg>
-<msg time="2026-06-17T11:04:22.355286" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:01.848289" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.355392" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2026-06-17T11:23:01.848448" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/users/add</arg>
 <arg>json=&amp;{body}</arg>
 <arg>expected_status=201</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.345349" elapsed="0.010083"/>
+<status status="PASS" start="2026-06-17T11:23:01.677506" elapsed="0.170981"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.355519" elapsed="0.000076"/>
+<status status="PASS" start="2026-06-17T11:23:01.848603" elapsed="0.000057"/>
 </return>
-<msg time="2026-06-17T11:04:22.355771" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2026-06-17T11:23:01.848795" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>John Doe</arg>
 <arg>QA Engineer</arg>
-<status status="PASS" start="2026-06-17T11:04:22.344790" elapsed="0.011007"/>
+<status status="PASS" start="2026-06-17T11:23:01.676902" elapsed="0.171913"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.356411" level="INFO">${body} = {'id': 209, 'firstName': 'John Doe', 'lastName': 'QA Engineer', 'maidenName': '', 'age': None, 'gender': '', 'email': '', 'phone': '', 'username': '', 'password': '', 'birthDate': '', 'image': '', 'bl...</msg>
+<msg time="2026-06-17T11:23:01.849465" level="INFO">${body} = {'id': 209, 'firstName': 'John Doe', 'lastName': 'QA Engineer', 'maidenName': '', 'age': None, 'gender': '', 'email': '', 'phone': '', 'username': '', 'password': '', 'birthDate': '', 'image': '', 'bl...</msg>
 <var>${body}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.355920" elapsed="0.000512"/>
+<status status="PASS" start="2026-06-17T11:23:01.848953" elapsed="0.000534"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.356742" level="FAIL">John Doe != John</msg>
+<msg time="2026-06-17T11:23:01.849777" level="FAIL">John Doe != John</msg>
 <arg>${body}[firstName]</arg>
 <arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="FAIL" start="2026-06-17T11:04:22.356521" elapsed="0.000294">John Doe != John</status>
+<status status="FAIL" start="2026-06-17T11:23:01.849578" elapsed="0.000278">John Doe != John</status>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[lastName]</arg>
 <arg>Doe</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2026-06-17T11:04:22.356923" elapsed="0.000017"/>
+<status status="NOT RUN" start="2026-06-17T11:23:01.849963" elapsed="0.000017"/>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.344403" elapsed="0.012641">John Doe != John</status>
+<status status="FAIL" start="2026-06-17T11:23:01.676565" elapsed="0.173535">John Doe != John</status>
 </test>
 <test id="s1-s3-t5" name="PUT Update User Returns 200 With Updated Fields" line="30">
 <kw name="Update User" owner="user_keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.358129" level="INFO">&amp;{body} = { firstName=Jane | lastName=Doe }</msg>
+<msg time="2026-06-17T11:23:01.851186" level="INFO">&amp;{body} = { firstName=Jane | lastName=Doe }</msg>
 <var>&amp;{body}</var>
 <arg>firstName=${first_name}</arg>
 <arg>lastName=${last_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.357896" elapsed="0.000259"/>
+<status status="PASS" start="2026-06-17T11:23:01.850947" elapsed="0.000265"/>
 </kw>
 <kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.369747" level="INFO">PUT Request : url=https://dummyjson.com/users/1 
+<msg time="2026-06-17T11:23:02.023991" level="INFO">PUT Request : url=https://dummyjson.com/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '40', 'Content-Type': 'application/json'} 
  body=b'{"firstName": "Jane", "lastName": "Doe"}' 
  </msg>
-<msg time="2026-06-17T11:04:22.369815" level="INFO">PUT Response : url=https://dummyjson.com/users/1 
+<msg time="2026-06-17T11:23:02.024087" level="INFO">PUT Response : url=https://dummyjson.com/users/1 
  status=200, reason=OK 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=drkQMk29YoVMP2DlFmbFInb3QNi5GD%2BB%2F56bJ3lJSnRIR5X%2FCqtUcyBBqIuKVnafg8YWIYqDDx40Q6mdITHeYQ73zg4o0VtvxI9aMk9yL1ivvNwyyXFV6%2FaRMzWITGyK"}]}', 'etag': 'W/"58a-BexMd5t2mU0iz6n6VE/Mbjg/Sqo"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '96', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b3cfd7ae0c-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=NfHwitrrZDMx8ZNwoiDEonxoT3Y3101s7RdS02FO%2FOEM8scwDsnmkPbKTONxoNQ9bUKpn%2BfeaC9vtEm7sZPJXCasQTbC%2BH02puqCqWNishSh71g%2FPacMyMBnPKXDI87x"}]}', 'etag': 'W/"58a-BexMd5t2mU0iz6n6VE/Mbjg/Sqo"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '96', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae089c95ed3b-SJC'} 
  body={"id":1,"firstName":"Jane","lastName":"Doe","maidenName":"Smith","age":29,"gender":"female","email":"emily.johnson@x.dummyjson.com","phone":"+81 965-431-3024","username":"emilys","password":"emilyspass","birthDate":"1996-5-30","image":"https://dummyjson.com/icon/emilys/128","bloodGroup":"O-","height":193.24,"weight":63.16,"eyeColor":"Green","hair":{"color":"Brown","type":"Curly"},"ip":"42.48.100.32","address":{"address":"626 Main Street","city":"Phoenix","state":"Mississippi","stateCode":"MS","postalCode":"29112","coordinates":{"lat":-77.16213,"lng":-92.084824},"country":"United States"},"macAddress":"47:fa:41:18:ec:eb","university":"University of Wisconsin--Madison","bank":{"cardExpire":"05/28","cardNumber":"3693233511855044","cardType":"Diners Club International","currency":"GBP","iban":"GB74MH2UZLR9TRPHYNU8F8"},"company":{"department":"Engineering","name":"Dooley, Kozey and Cronin","title":"Sales Manager","address":{"address":"263 Tenth Street","city":"San Francisco","state":"Wisconsin","stateCode":"WI","postalCode":"37657","coordinates":{"lat":71.814525,"lng":-161.150263},"country":"United States"}},"ein":"977-175","ssn":"900-590-289","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin"} 
  </msg>
-<msg time="2026-06-17T11:04:22.369914" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:02.024214" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.370004" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:02.024355" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/users/${user_id}</arg>
 <arg>json=&amp;{body}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.358241" elapsed="0.011798"/>
+<status status="PASS" start="2026-06-17T11:23:01.851301" elapsed="0.173094"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.370117" elapsed="0.000041"/>
+<status status="PASS" start="2026-06-17T11:23:02.024504" elapsed="0.000058"/>
 </return>
-<msg time="2026-06-17T11:04:22.370305" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:02.024735" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${VALID_USER_ID}</arg>
 <arg>Jane</arg>
 <arg>Doe</arg>
-<status status="PASS" start="2026-06-17T11:04:22.357642" elapsed="0.012690"/>
+<status status="PASS" start="2026-06-17T11:23:01.850685" elapsed="0.174077"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.371035" level="INFO">${body} = {'id': 1, 'firstName': 'Jane', 'lastName': 'Doe', 'maidenName': 'Smith', 'age': 29, 'gender': 'female', 'email': 'emily.johnson@x.dummyjson.com', 'phone': '+81 965-431-3024', 'username': 'emilys', 'pa...</msg>
+<msg time="2026-06-17T11:23:02.025531" level="INFO">${body} = {'id': 1, 'firstName': 'Jane', 'lastName': 'Doe', 'maidenName': 'Smith', 'age': 29, 'gender': 'female', 'email': 'emily.johnson@x.dummyjson.com', 'phone': '+81 965-431-3024', 'username': 'emilys', 'pa...</msg>
 <var>${body}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.370465" elapsed="0.000593"/>
+<status status="PASS" start="2026-06-17T11:23:02.024921" elapsed="0.000635"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[firstName]</arg>
 <arg>Jane</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.371146" elapsed="0.000140"/>
+<status status="PASS" start="2026-06-17T11:23:02.025653" elapsed="0.000153"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.357229" elapsed="0.014140"/>
+<status status="PASS" start="2026-06-17T11:23:01.850293" elapsed="0.175609"/>
 </test>
 <test id="s1-s3-t6" name="PATCH User Returns 200 With Patched Field" line="35">
 <kw name="Patch User" owner="user_keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.372629" level="INFO">&amp;{body} = { firstName=Updated }</msg>
+<msg time="2026-06-17T11:23:02.027194" level="INFO">&amp;{body} = { firstName=Updated }</msg>
 <var>&amp;{body}</var>
 <arg>firstName=${first_name}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.372170" elapsed="0.000484"/>
+<status status="PASS" start="2026-06-17T11:23:02.026730" elapsed="0.000486"/>
 </kw>
 <kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.384406" level="INFO">PATCH Request : url=https://dummyjson.com/users/1 
+<msg time="2026-06-17T11:23:02.198520" level="INFO">PATCH Request : url=https://dummyjson.com/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '24', 'Content-Type': 'application/json'} 
  body=b'{"firstName": "Updated"}' 
  </msg>
-<msg time="2026-06-17T11:04:22.384482" level="INFO">PATCH Response : url=https://dummyjson.com/users/1 
+<msg time="2026-06-17T11:23:02.198612" level="INFO">PATCH Response : url=https://dummyjson.com/users/1 
  status=200, reason=OK 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=8JM1FN%2F%2FW8zYF3Fhnfl5Kps89QW1q9b4Juz2Owpt9LlTe0vFxJn9JVxGlWjxxS2YQ6r%2BEB6qeM3MeGlPqZgYAyN%2FSxxAqRcnZJjGpX%2FcRHmarqyZqARQefyhGJYCWJEv"}]}', 'etag': 'W/"591-h6luqVQMRT8DhqPklq1ppShxzDk"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '95', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b3dffcae0c-IAD'} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=kBOIhKjPlybhW1KqisZwwM1qrAysRW3SmG%2F9busUQVNa5aCvxTiYZs0eXZCrLLWIwZ%2BneXppil45%2BJq3unF4msYpZluSL2CTKqHZncsMr1IB2Si1nZpREZ1w3g9rujsV"}]}', 'etag': 'W/"591-h6luqVQMRT8DhqPklq1ppShxzDk"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '95', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae09aebeed3b-SJC'} 
  body={"id":1,"firstName":"Updated","lastName":"Johnson","maidenName":"Smith","age":29,"gender":"female","email":"emily.johnson@x.dummyjson.com","phone":"+81 965-431-3024","username":"emilys","password":"emilyspass","birthDate":"1996-5-30","image":"https://dummyjson.com/icon/emilys/128","bloodGroup":"O-","height":193.24,"weight":63.16,"eyeColor":"Green","hair":{"color":"Brown","type":"Curly"},"ip":"42.48.100.32","address":{"address":"626 Main Street","city":"Phoenix","state":"Mississippi","stateCode":"MS","postalCode":"29112","coordinates":{"lat":-77.16213,"lng":-92.084824},"country":"United States"},"macAddress":"47:fa:41:18:ec:eb","university":"University of Wisconsin--Madison","bank":{"cardExpire":"05/28","cardNumber":"3693233511855044","cardType":"Diners Club International","currency":"GBP","iban":"GB74MH2UZLR9TRPHYNU8F8"},"company":{"department":"Engineering","name":"Dooley, Kozey and Cronin","title":"Sales Manager","address":{"address":"263 Tenth Street","city":"San Francisco","state":"Wisconsin","stateCode":"WI","postalCode":"37657","coordinates":{"lat":71.814525,"lng":-161.150263},"country":"United States"}},"ein":"977-175","ssn":"900-590-289","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin"} 
  </msg>
-<msg time="2026-06-17T11:04:22.384602" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:02.198702" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.384727" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:02.198815" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/users/${user_id}</arg>
 <arg>json=&amp;{body}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.372744" elapsed="0.012023"/>
+<status status="PASS" start="2026-06-17T11:23:02.027306" elapsed="0.171531"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.384855" elapsed="0.000040"/>
+<status status="PASS" start="2026-06-17T11:23:02.198955" elapsed="0.000058"/>
 </return>
-<msg time="2026-06-17T11:04:22.385042" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:02.199177" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${VALID_USER_ID}</arg>
 <arg>Updated</arg>
-<status status="PASS" start="2026-06-17T11:04:22.371927" elapsed="0.013143"/>
+<status status="PASS" start="2026-06-17T11:23:02.026470" elapsed="0.172737"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.385739" level="INFO">${body} = {'id': 1, 'firstName': 'Updated', 'lastName': 'Johnson', 'maidenName': 'Smith', 'age': 29, 'gender': 'female', 'email': 'emily.johnson@x.dummyjson.com', 'phone': '+81 965-431-3024', 'username': 'emily...</msg>
+<msg time="2026-06-17T11:23:02.199985" level="INFO">${body} = {'id': 1, 'firstName': 'Updated', 'lastName': 'Johnson', 'maidenName': 'Smith', 'age': 29, 'gender': 'female', 'email': 'emily.johnson@x.dummyjson.com', 'phone': '+81 965-431-3024', 'username': 'emily...</msg>
 <var>${body}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.385200" elapsed="0.000561"/>
+<status status="PASS" start="2026-06-17T11:23:02.199419" elapsed="0.000589"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[firstName]</arg>
 <arg>Updated</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.385851" elapsed="0.000137"/>
+<status status="PASS" start="2026-06-17T11:23:02.200102" elapsed="0.000151"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.371542" elapsed="0.014530"/>
+<status status="PASS" start="2026-06-17T11:23:02.026074" elapsed="0.174306"/>
 </test>
 <test id="s1-s3-t7" name="DELETE User Returns 200" line="40">
 <kw name="Delete User" owner="user_keywords">
 <kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.397542" level="INFO">DELETE Request : url=https://dummyjson.com/users/1 
+<msg time="2026-06-17T11:23:02.372937" level="INFO">DELETE Request : url=https://dummyjson.com/users/1 
  path_url=/users/1 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2026-06-17T11:04:22.397657" level="INFO">DELETE Response : url=https://dummyjson.com/users/1 
+<msg time="2026-06-17T11:23:02.373030" level="INFO">DELETE Response : url=https://dummyjson.com/users/1 
  status=200, reason=OK 
- headers={'Date': 'Wed, 17 Jun 2026 11:04:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=yXVH%2BUEdEWHWXnTe14%2F55f9fY5n6TYBhO%2BdSoHBTOAOzJrTHQ3BzQXZDIeRzudTJnDecmC8YQMwR%2FZzP%2B7grpDvkoad46qFUlqtwQ8L%2BpNOYIKHVVDtSSa82EvISix7P"}]}', 'etag': 'W/"5c7-efaUfI2cLRXj8ex6ZprnEgQ5wRo"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '94', 'x-ratelimit-reset': '1781694268', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d192b3e81eae0c-IAD'} 
- body={"id":1,"firstName":"Emily","lastName":"Johnson","maidenName":"Smith","age":29,"gender":"female","email":"emily.johnson@x.dummyjson.com","phone":"+81 965-431-3024","username":"emilys","password":"emilyspass","birthDate":"1996-5-30","image":"https://dummyjson.com/icon/emilys/128","bloodGroup":"O-","height":193.24,"weight":63.16,"eyeColor":"Green","hair":{"color":"Brown","type":"Curly"},"ip":"42.48.100.32","address":{"address":"626 Main Street","city":"Phoenix","state":"Mississippi","stateCode":"MS","postalCode":"29112","coordinates":{"lat":-77.16213,"lng":-92.084824},"country":"United States"},"macAddress":"47:fa:41:18:ec:eb","university":"University of Wisconsin--Madison","bank":{"cardExpire":"05/28","cardNumber":"3693233511855044","cardType":"Diners Club International","currency":"GBP","iban":"GB74MH2UZLR9TRPHYNU8F8"},"company":{"department":"Engineering","name":"Dooley, Kozey and Cronin","title":"Sales Manager","address":{"address":"263 Tenth Street","city":"San Francisco","state":"Wisconsin","stateCode":"WI","postalCode":"37657","coordinates":{"lat":71.814525,"lng":-161.150263},"country":"United States"}},"ein":"977-175","ssn":"900-590-289","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin","isDeleted":true,"deletedOn":"2026-06-17T11:04:22.396Z"} 
+ headers={'Date': 'Wed, 17 Jun 2026 11:23:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=kejtx9MFKnshs05NePAPGtvTbDjirRv76L%2BPYpBFoU6waSewS77cpmax4t2cmUAFCXDZZs0QGOEAhSt10vFCuKJOlXZ904wpnvDHClYl4%2FQflh5ocmT7ACXq2dkGbFLJ"}]}', 'etag': 'W/"5c7-wNewQRtdduF6dOr69FstPAeu5j8"', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-dns-prefetch-control': 'off', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '94', 'x-ratelimit-reset': '1781695390', 'x-xss-protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': 'a0d1ae0ac8baed3b-SJC'} 
+ body={"id":1,"firstName":"Emily","lastName":"Johnson","maidenName":"Smith","age":29,"gender":"female","email":"emily.johnson@x.dummyjson.com","phone":"+81 965-431-3024","username":"emilys","password":"emilyspass","birthDate":"1996-5-30","image":"https://dummyjson.com/icon/emilys/128","bloodGroup":"O-","height":193.24,"weight":63.16,"eyeColor":"Green","hair":{"color":"Brown","type":"Curly"},"ip":"42.48.100.32","address":{"address":"626 Main Street","city":"Phoenix","state":"Mississippi","stateCode":"MS","postalCode":"29112","coordinates":{"lat":-77.16213,"lng":-92.084824},"country":"United States"},"macAddress":"47:fa:41:18:ec:eb","university":"University of Wisconsin--Madison","bank":{"cardExpire":"05/28","cardNumber":"3693233511855044","cardType":"Diners Club International","currency":"GBP","iban":"GB74MH2UZLR9TRPHYNU8F8"},"company":{"department":"Engineering","name":"Dooley, Kozey and Cronin","title":"Sales Manager","address":{"address":"263 Tenth Street","city":"San Francisco","state":"Wisconsin","stateCode":"WI","postalCode":"37657","coordinates":{"lat":71.814525,"lng":-161.150263},"country":"United States"}},"ein":"977-175","ssn":"900-590-289","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36","crypto":{"coin":"Bitcoin","wallet":"0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a","network":"Ethereum (ERC20)"},"role":"admin","isDeleted":true,"deletedOn":"2026-06-17T11:23:02.287Z"} 
  </msg>
-<msg time="2026-06-17T11:04:22.397762" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2026-06-17T11:23:02.373152" level="INFO">/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/urllib3/connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummyjson.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2026-06-17T11:04:22.397866" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:02.373267" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
 <arg>/users/${user_id}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.386832" elapsed="0.011067"/>
+<status status="PASS" start="2026-06-17T11:23:02.201113" elapsed="0.172176"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2026-06-17T11:04:22.397966" elapsed="0.000038"/>
+<status status="PASS" start="2026-06-17T11:23:02.373413" elapsed="0.000059"/>
 </return>
-<msg time="2026-06-17T11:04:22.398147" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-06-17T11:23:02.373645" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${VALID_USER_ID}</arg>
-<status status="PASS" start="2026-06-17T11:04:22.386615" elapsed="0.011559"/>
+<status status="PASS" start="2026-06-17T11:23:02.200889" elapsed="0.172783"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.398737" level="INFO">Argument types are:
+<msg time="2026-06-17T11:23:02.374255" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.398292" elapsed="0.000493"/>
+<status status="PASS" start="2026-06-17T11:23:02.373835" elapsed="0.000468"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-17T11:04:22.399277" level="INFO">${body} = {'id': 1, 'firstName': 'Emily', 'lastName': 'Johnson', 'maidenName': 'Smith', 'age': 29, 'gender': 'female', 'email': 'emily.johnson@x.dummyjson.com', 'phone': '+81 965-431-3024', 'username': 'emilys'...</msg>
+<msg time="2026-06-17T11:23:02.374848" level="INFO">${body} = {'id': 1, 'firstName': 'Emily', 'lastName': 'Johnson', 'maidenName': 'Smith', 'age': 29, 'gender': 'female', 'email': 'emily.johnson@x.dummyjson.com', 'phone': '+81 965-431-3024', 'username': 'emilys'...</msg>
 <var>${body}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.398876" elapsed="0.000423"/>
+<status status="PASS" start="2026-06-17T11:23:02.374426" elapsed="0.000444"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${body}[isDeleted]</arg>
 <arg>${True}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-17T11:04:22.399384" elapsed="0.000143"/>
+<status status="PASS" start="2026-06-17T11:23:02.374959" elapsed="0.000152"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.386247" elapsed="0.013386"/>
+<status status="PASS" start="2026-06-17T11:23:02.200559" elapsed="0.174645"/>
 </test>
 <kw name="Delete API Session" owner="api_keywords" type="TEARDOWN">
 <kw name="Delete All Sessions" owner="RequestsLibrary">
-<msg time="2026-06-17T11:04:22.400232" level="INFO">Deleting All Sessions</msg>
+<msg time="2026-06-17T11:23:02.375957" level="INFO">Deleting All Sessions</msg>
 <doc>Removes all the session objects</doc>
-<status status="PASS" start="2026-06-17T11:04:22.400176" elapsed="0.000107"/>
+<status status="PASS" start="2026-06-17T11:23:02.375882" elapsed="0.000132"/>
 </kw>
-<status status="PASS" start="2026-06-17T11:04:22.400028" elapsed="0.000300"/>
+<status status="PASS" start="2026-06-17T11:23:02.375667" elapsed="0.000393"/>
 </kw>
-<status status="FAIL" start="2026-06-17T11:04:22.266994" elapsed="0.133357"/>
+<status status="FAIL" start="2026-06-17T11:23:01.275744" elapsed="1.100339"/>
 </suite>
-<status status="FAIL" start="2026-06-17T11:04:21.746297" elapsed="0.654628"/>
+<status status="FAIL" start="2026-06-17T11:22:58.396908" elapsed="3.979749"/>
 </suite>
 <statistics>
 <total>
