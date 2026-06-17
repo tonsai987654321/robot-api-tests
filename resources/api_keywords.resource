@@ -1,5 +1,6 @@
 *** Settings ***
 Library    RequestsLibrary
+Library    Collections
 Resource   variables.robot
 
 *** Keywords ***

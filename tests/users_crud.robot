@@ -22,7 +22,7 @@ GET Non-Existent User Returns 404
     Should Be Equal As Integers    ${response.status_code}    404
 
 POST Create User Returns 201 With Data
-    ${response}=    Create User    John Doe    QA Engineer
+    ${response}=    Create User    John    Doe
     ${body}=        Set Variable    ${response.json()}
     Should Be Equal    ${body}[firstName]    John
     Should Be Equal    ${body}[lastName]     Doe
